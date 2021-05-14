@@ -8,9 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
     align-items: center;
-    background: rgb(82, 81, 83);
+    background: lightcoral;
 }
 
 .container {
@@ -19,14 +18,19 @@ body {
     height: 600px;
     width: 600px;
     overflow:hidden;
+    grid-gap: auto;
     
 }
 
 
 .box {
-    outline: red solid 1px;
+    outline: green solid 1px;
     /* content: ""; */
     /* height: 0; */
     /* padding-bottom: 100%; */
     /* display: block; */
+}
+
+.box:hover {
+    background: randomColor();
 }

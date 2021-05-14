@@ -1,5 +1,7 @@
 const container = document.querySelector("#container");
 const box = document.createElement('div');
+let boxNodelist = document.querySelectorAll('.box');
+let boxArray = Array.from(boxNodelist);
 
 
 function randomColor() {
@@ -8,22 +10,27 @@ function randomColor() {
     
 } 
 
-
-function createGrid(input) {
-    let num = prompt("Choose a number");
+function createGrid(num, color) {
+    // let num = prompt("Choose a number");
     for (let i = 0; i < (num * num); i++) {
-        box.style.color = 'blue';
-        box.style.background = randomColor();
+        // box.style.color = 'blue';
+        
         box.setAttribute('class', 'box');
-        
+        box.style.background = color.toString();
         container.appendChild(box.cloneNode(true));
-        
+        boxNodelist = document.querySelectorAll('.box');
+        boxArray = Array.from(boxNodelist);
     }
     
-        container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`
-        container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`
+        container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
+        container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
 }
 
+createGrid(8, 'white');
 
-
-createGrid();
+boxArray.forEach( function(div){
+    div.addEventListener("mouseenter", function() {
+    div.style.background = 'blue';
+    
+    });
+});
