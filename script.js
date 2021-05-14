@@ -1,7 +1,7 @@
 const container = document.querySelector("#container");
 const box = document.createElement('div');
-let boxNodelist = document.querySelectorAll('.box');
-let boxArray = Array.from(boxNodelist);
+// let boxNodelist = document.querySelectorAll('.box');
+let boxArray = Array.from(document.querySelectorAll('.box'));
 
 
 function randomColor() {
@@ -18,8 +18,8 @@ function createGrid(num, color) {
         box.setAttribute('class', 'box');
         box.style.background = color.toString();
         container.appendChild(box.cloneNode(true));
-        boxNodelist = document.querySelectorAll('.box');
-        boxArray = Array.from(boxNodelist);
+        // boxNodelist = document.querySelectorAll('.box');
+        boxArray = Array.from(document.querySelectorAll('.box'));
     }
     
         container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
@@ -30,7 +30,7 @@ createGrid(8, 'white');
 
 boxArray.forEach( function(div){
     div.addEventListener("mouseenter", function() {
-    div.style.background = 'blue';
+    div.style.background = randomColor();
     
     });
 });
