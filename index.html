@@ -20,15 +20,27 @@
         <div id="bottom" class="bottom">
                 <input id="leftbutton" type="button">
 
-                </input>
                 <div id="middle">
-
+                    <div id="colortoggles">
+                        <input type="radio" id="rainbow" name="colortoggle">
+                        <label for="rainbow">Rainbow</label>
+                        <input type="radio" id="grayscale" name="colortoggle" checked>
+                        <label for="grayscale">Grayscale</label>
+                    </div>
+                    <div id="gridentry">
+                        <p>Type grid size & press Enter</p>
+                        <input id="numberInput" class="numberInput" type="text" onkeypress="clickPress(event)" maxlength="3" size="3">
+                    </div>
+                    <div id="clearbutton">
+                        <button id="cleargrid">Clear</button>
+                    </div>
                 </div>
                 <input id="rightbutton" type="button">
                     
-                </input>
             </div>
     </div>
+
+    <!-- onchange="getInputValue()" -->
 
     <script src="script.js"></script>
 </body>
