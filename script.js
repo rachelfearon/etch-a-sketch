@@ -30,10 +30,11 @@ function createGrayGrid(num, color) {
     for (let i = 0; i < (num * num); i++) {
         const box = document.createElement('div');
         box.setAttribute('class', 'box');
-        box.style.background = color.toString();
+        box.style.background = `hsl(${0}, ${0}%, ${95}%)`;
         container.appendChild(box);
     }
     boxArray = Array.from(document.querySelectorAll('.box'));
+    applyGrayMouseEvent();
     container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
     container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
 }
@@ -65,14 +66,22 @@ function getInputValue() {
 function applyColorMouseEvent() {
     boxArray.forEach( function(div){
         div.addEventListener("mouseenter", function() {
-        div.style.background = getRandomColor();
+        div.style.background = getRandomHexColor();
         
         });
     });
 };
 
-function getRandomColor() {
+function applyGrayMouseEvent() {
+    boxArray.forEach( function(div){
+        div.addEventListener("mouseenter", function() {
+        div.style.background = `hsl(0, 0%, 35%)`;
+        
+        });
+    });
+};
+
+function getRandomHexColor() {
     let newColorCode = Math.floor(Math.random()*16777215).toString(16);
     return newColor = "#" + newColorCode.toString();
 } 
-
