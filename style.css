@@ -1,201 +1,200 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #91cbec;
-    background-image: linear-gradient(180deg, #91cbec 0%, #6eb9b1 100%);
-
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #91cbec;
+	background-image: linear-gradient(180deg, #91cbec 0%, #5fa79f 100%);
 }
 
-
-
 .container {
-    display: grid;
-    background: rgb(129, 129, 129);
-    border-top: 0;
-    border-right: 95px solid rgb(230, 23, 23);
-    /* border-bottom: 90px solid rgb(230, 23, 23); */
-    border-left: 95px solid rgb(230, 23, 23);
-    border-radius: 0 0px 0 0;
-    box-shadow: 1px 1px black,
-        2px 2px darkred,
-        3px 3px darkred,
-        4px 4px darkred,
-        5px 5px darkred,
-        6px 6px darkred,
-        7px 7px darkred,
-        8px 8px darkred,
-        9px 9px darkred,
-        10px 10px darkred;
-    height: 500px;
-    width: 500px;
-    grid-gap: auto;
-    
+	display: grid;
+	background: rgb(177, 177, 177);
+	border-top: 0;
+	border-right: 95px solid rgb(230, 23, 23);
+	border-left: 95px solid rgb(230, 23, 23);
+	border-radius: 0 0px 0 0;
+	box-shadow: 1px 1px black, 2px 2px darkred, 3px 3px darkred, 4px 4px darkred,
+		5px 5px darkred, 6px 6px darkred, 7px 7px darkred, 8px 8px darkred,
+		9px 9px darkred, 10px 10px darkred;
+	height: 500px;
+	width: 500px;
+	grid-gap: auto;
 }
 
 .box {
-    --opacityValue: 0.0;
-    opacity: var(--opacityValue);
+	--opacityValue: 0;
+	opacity: var(--opacityValue);
 }
 
 .colorBox {
 }
 
 .top {
-    display: flex;
-    flex-direction: row;
-    /* margin-top: 25px; */
-    background:rgb(230, 23, 23);
-    max-width: 690px;
-    height: 75px;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 1px 1px black,
-        2px 2px darkred,
-        3px 3px darkred,
-        4px 4px darkred,
-        5px 5px darkred,
-        6px 6px darkred,
-        7px 7px darkred,
-        8px 8px darkred,
-        9px 9px darkred,
-        10px 10px darkred;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	/* margin-top: 25px; */
+	background: rgb(230, 23, 23);
+	max-width: 690px;
+	height: 75px;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 1px 1px black, 2px 2px darkred, 3px 3px darkred, 4px 4px darkred,
+		5px 5px darkred, 6px 6px darkred, 7px 7px darkred, 8px 8px darkred,
+		9px 9px darkred, 10px 10px darkred;
+	justify-content: center;
+	align-items: center;
 }
 
 .title {
-    font-family:cursive;
-    font-weight: bolder;
-    font-size: 2.5em;
-    background: -webkit-radial-gradient(center, 95% 30%, goldenrod, rgb(153, 111, 3));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	font-family: cursive;
+	font-weight: bolder;
+	font-size: 2.5em;
+	background: -webkit-radial-gradient(
+		center,
+		95% 30%,
+		goldenrod,
+		rgb(153, 111, 3)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .bottom {
-    display: flex;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
-    grid-template-rows: 90px;
-    background:rgb(230, 23, 23);
-    width: 690px;
-    height: 90px;
-    box-shadow: 1px 1px black,
-        2px 2px darkred,
-        3px 3px darkred,
-        4px 4px darkred,
-        5px 5px darkred,
-        6px 6px darkred,
-        7px 7px darkred,
-        8px 8px darkred,
-        9px 9px darkred,
-        10px 10px 1px darkred;
-    border-radius: 0 0 10px 10px;
+	display: flex;
+	grid-template-rows: 90px;
+	background: rgb(230, 23, 23);
+	width: 690px;
+	height: 90px;
+	box-shadow: 1px 1px black, 2px 2px darkred, 3px 3px darkred, 4px 4px darkred,
+		5px 5px darkred, 6px 6px darkred, 7px 7px darkred, 8px 8px darkred,
+		9px 9px darkred, 10px 10px 1px darkred;
+	border-radius: 0 0 10px 10px;
 }
 
-#leftbutton, #rightbutton {
-    /* display: inline-block; */
-    text-decoration: none;
-    background-color: white;
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
-    border-color: rgb(41, 41, 41);
-    background-image: radial-gradient(at 0% 10%, 
-        white 65px, rgb(41, 41, 41) 95%);
-    box-shadow: 6px 6px 1px rgb(41, 41, 41);
+#leftbutton,
+#rightbutton {
+	text-decoration: none;
+	background-color: white;
+	height: 65px;
+	width: 65px;
+	border-radius: 50%;
+	border-color: rgb(41, 41, 41);
+	background-image: radial-gradient(at 0% 10%, white 65px, rgb(41, 41, 41) 95%);
+	box-shadow: 6px 6px 1px rgb(41, 41, 41);
 }
 
 #leftbutton {
-    /* grid-column-start: 1; */
-    justify-self: start;
-    margin-top: 8px;
-    margin-left: 12px;
-    outline: none;
+	justify-self: start;
+	margin-top: 8px;
+	margin-left: 12px;
+	outline: none;
 }
 
 #rightbutton {
-    float: right;
-    margin-top: 8px;
-    margin-right: 12px;
-    outline: none;
+	float: right;
+	margin-top: 8px;
+	margin-right: 12px;
+	outline: none;
 }
 
 #middle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 70%;
-    margin: 0 auto;
-    align-items: center;
-    margin: 25px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 70%;
+	margin: 0 auto;
+	align-items: center;
+	margin: 25px;
 }
 
 #numberInput {
-    text-align: center;
-    height: 32px;
-    width: 40px;
-    outline: none;
-    padding: 0px 8px;
-    border-radius: 4px;
-    background-color: lightgray;
-    margin: 0 auto;
+	text-align: center;
+	height: 32px;
+	width: 40px;
+	outline: none;
+	padding: 0px 8px;
+	border-radius: 4px;
+	background-color: lightgray;
+	margin: 0 auto;
 }
 
-#gridentry, #colortoggles {
-    display: flex;
-    flex-direction: column;
-    
+#gridentry,
+#colortoggles {
+	display: flex;
+	flex-direction: column;
 }
 
 p {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
 }
 
 .bigcontainershaking {
-    animation: shake 0.5s;
-    animation-iteration-count: 1;
+	animation: shake 0.5s;
+	animation-iteration-count: 1;
 }
 
 @keyframes shake {
-    0% { transform: translate(2px, 1px) rotate(0deg); }
-    10% { transform: translate(-2px, -2px) rotate(0deg); }
-    20% { transform: translate(-3px, 0px) rotate(0deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(0deg); }
-    50% { transform: translate(-1px, 2px) rotate(0deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(0deg); }
-    80% { transform: translate(-1px, -1px) rotate(0deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(0deg); }
+	0% {
+		transform: translate(2px, 1px) rotate(0deg);
+	}
+	10% {
+		transform: translate(-2px, -2px) rotate(0deg);
+	}
+	20% {
+		transform: translate(-3px, 0px) rotate(0deg);
+	}
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+	40% {
+		transform: translate(1px, -1px) rotate(0deg);
+	}
+	50% {
+		transform: translate(-1px, 2px) rotate(0deg);
+	}
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+	70% {
+		transform: translate(3px, 1px) rotate(0deg);
+	}
+	80% {
+		transform: translate(-1px, -1px) rotate(0deg);
+	}
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+	100% {
+		transform: translate(1px, -2px) rotate(0deg);
+	}
 }
 
 #colortoggles {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
 }
 
 button {
-    background: rgb(243, 199, 199);
-    height: 40px;
-    width: 80px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
-    border: white outset 2px;
+	background: rgb(253, 228, 228);
+	height: 40px;
+	width: 80px;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+	font-size: 16px;
+	border: white outset 2px;
 }
 
-
 .bigcontainer {
-    border-top: rgb(241, 104, 104) solid 4px;
-    border-left: rgb(241, 104, 104) solid 4px;
-    border-radius: 14px;
-    
+	border-top: rgb(241, 104, 104) solid 4px;
+	border-left: rgb(241, 104, 104) solid 4px;
+	border-radius: 14px;
 }

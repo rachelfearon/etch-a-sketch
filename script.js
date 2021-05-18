@@ -82,7 +82,6 @@ function applyGrayMouseEvent() {
     boxArray.forEach( function(div){
         div.addEventListener("mouseenter", function() {
         div.style.background = `hsl(0, 0%, 35%)`;
-        
         });
     });
 };
@@ -94,10 +93,8 @@ function increaseOpacity() {
             let currentDivStyle = divStyle.getPropertyValue('--opacityValue');
             div.style.setProperty('--opacityValue', `${(parseFloat(currentDivStyle)) + 0.1}`);
             getOpacityValue();
-        })
-        
+        }) 
     })
-    
 }
 
 function getRandomHexColor() {
