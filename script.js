@@ -2,16 +2,6 @@ const container = document.querySelector("#container");
 const box = document.createElement('div');
 const bigContainer = document.getElementById('bigcontainer');
 const clearBtn = document.getElementById('cleargrid');
-const root = document.querySelector(':root');
-let inputValue = document.getElementById("numberInput").value;
-let boxArray = Array.from(document.querySelectorAll('.box'));
-let opacityValue = 0;
-
-function getOpacityValue() {
-    let rootStyle = getComputedStyle(root);
-    return opacityValue = parseFloat(rootStyle.getPropertyValue('--opacityValue'));
-    //alert("the value of --opacity is" + opacityValue.getPropertyValue('--opacity'));
-}
 
 clearBtn.addEventListener('click', function(e) {
     e.preventDefault;
@@ -24,11 +14,11 @@ clearBtn.addEventListener('click', function(e) {
 function createColorGrid(num, color) {
     for (let i = 0; i < (num * num); i++) {
         const box = document.createElement('div');
-        box.setAttribute('class', 'box');
+        box.setAttribute('class', 'colorBox');
         box.style.background = color.toString();
         container.appendChild(box);
     }
-    boxArray = Array.from(document.querySelectorAll('.box'));
+    boxArray = Array.from(document.querySelectorAll('.colorBox'));
     applyColorMouseEvent();
     container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
     container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
@@ -39,11 +29,11 @@ function createGrayGrid(num, color) {
         const box = document.createElement('div');
         box.setAttribute('class', 'box');
         box.style.background = `black`;
+        container.style.setProperty('background', 'lightgray');
         container.appendChild(box);
     }
     boxArray = Array.from(document.querySelectorAll('.box'));
-    //applyGrayMouseEvent();
-    decreaseOpacity();
+    increaseOpacity();
     container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
     container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
 }
@@ -51,6 +41,7 @@ function createGrayGrid(num, color) {
 function clearGrid() {
         const node = document.getElementById('container');
         node.querySelectorAll('.box').forEach(n => n.remove());
+        node.querySelectorAll('.colorBox').forEach(n => n.remove());
         getInputValue();
         if(document.getElementById('grayscale').checked == true) {
             createGrayGrid(inputValue, 'lightgray');
@@ -61,8 +52,8 @@ function clearGrid() {
 
 function clickPress(event) {
     getInputValue();
-    if (inputValue > 100) {
-        alert("Number must be less than 100.");
+    if (inputValue < 0 || inputValue > 100) {
+        alert("Please enter a number between 1 and 100.");
         return;
     } else if (event.keyCode == 13) {
         clearGrid();
@@ -75,7 +66,7 @@ function clickPress(event) {
 }
 
 function getInputValue() {
-    inputValue = document.getElementById("numberInput").value;
+    inputValue = Math.round(document.getElementById("numberInput").value);
 }
 
 function applyColorMouseEvent() {
@@ -87,8 +78,6 @@ function applyColorMouseEvent() {
     });
 };
 
-
-
 function applyGrayMouseEvent() {
     boxArray.forEach( function(div){
         div.addEventListener("mouseenter", function() {
@@ -98,9 +87,7 @@ function applyGrayMouseEvent() {
     });
 };
 
-
-
-function decreaseOpacity() {
+function increaseOpacity() {
     boxArray.forEach( function(div){
         div.addEventListener("mouseenter", function() {
             let divStyle = getComputedStyle(this);
@@ -112,7 +99,6 @@ function decreaseOpacity() {
     })
     
 }
-
 
 function getRandomHexColor() {
     let newColorCode = Math.floor(Math.random()*16777215).toString(16);
