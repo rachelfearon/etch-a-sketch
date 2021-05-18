@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+/* :root {
+    --opacityValue: 0.1;
+} */
 
 body {
     display: flex;
@@ -39,7 +42,9 @@ body {
 
 
 .box {
+    --opacityValue: 0.0;
     outline: black solid 1px;
+    opacity: var(--opacityValue);
 }
 
 .top {
@@ -153,8 +158,6 @@ p {
 }
 
 .bigcontainershaking {
-
-    
     animation: shake 0.5s;
     animation-iteration-count: 1;
 }
