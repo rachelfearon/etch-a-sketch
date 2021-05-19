@@ -3,6 +3,8 @@ const box = document.createElement('div');
 const bigContainer = document.getElementById('bigcontainer');
 const clearBtn = document.getElementById('cleargrid');
 
+
+
 clearBtn.addEventListener('click', function(e) {
     e.preventDefault;
     bigContainer.classList.remove('bigcontainershaking');
@@ -18,7 +20,6 @@ function createColorGrid(num, color) {
         box.style.background = color.toString();
         container.appendChild(box);
     }
-    boxArray = Array.from(document.querySelectorAll('.colorBox'));
     applyColorMouseEvent();
     container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
     container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
@@ -32,7 +33,6 @@ function createGrayGrid(num, color) {
         container.style.setProperty('background', 'lightgray');
         container.appendChild(box);
     }
-    boxArray = Array.from(document.querySelectorAll('.box'));
     increaseOpacity();
     container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
     container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
@@ -70,31 +70,28 @@ function getInputValue() {
 }
 
 function applyColorMouseEvent() {
-    boxArray.forEach( function(div){
-        div.addEventListener("mouseenter", function() {
-        div.style.background = getRandomHexColor();
-        
-        });
+    container.addEventListener("mouseover", event => {
+        if (event.target.className === 'colorBox') {
+            event.target.style.background = getRandomHexColor();
+        }
     });
 };
 
 function applyGrayMouseEvent() {
-    boxArray.forEach( function(div){
-        div.addEventListener("mouseenter", function() {
-        div.style.background = `hsl(0, 0%, 35%)`;
-        });
+    container.addEventListener("mouseover", event => {
+        if (event.target.className === 'box') {
+        event.target.style.background = `hsl(0, 0%, 35%)`;
+        };
     });
 };
 
 function increaseOpacity() {
-    boxArray.forEach( function(div){
-        div.addEventListener("mouseenter", function() {
-            let divStyle = getComputedStyle(this);
-            let currentDivStyle = divStyle.getPropertyValue('--opacityValue');
-            div.style.setProperty('--opacityValue', `${(parseFloat(currentDivStyle)) + 0.1}`);
-        }) 
-    })
-}
+    container.addEventListener("mouseover", event => {
+        let divStyle = getComputedStyle(event.target);
+        let currentDivStyle = divStyle.getPropertyValue('--opacityValue');
+        event.target.style.setProperty('--opacityValue', `${(parseFloat(currentDivStyle)) + 0.1}`);
+    }) 
+    }
 
 function getRandomHexColor() {
     let newColorCode = Math.floor(Math.random()*16777215).toString(16);
