@@ -92,7 +92,6 @@ function increaseOpacity() {
             let divStyle = getComputedStyle(this);
             let currentDivStyle = divStyle.getPropertyValue('--opacityValue');
             div.style.setProperty('--opacityValue', `${(parseFloat(currentDivStyle)) + 0.1}`);
-            getOpacityValue();
         }) 
     })
 }
@@ -101,3 +100,5 @@ function getRandomHexColor() {
     let newColorCode = Math.floor(Math.random()*16777215).toString(16);
     return newColor = "#" + newColorCode.toString();
 } 
+
+createGrayGrid(30, 'lightgray');
