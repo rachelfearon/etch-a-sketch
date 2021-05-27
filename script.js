@@ -2,8 +2,7 @@ const container = document.querySelector("#container");
 const box = document.createElement('div');
 const bigContainer = document.getElementById('bigcontainer');
 const clearBtn = document.getElementById('cleargrid');
-
-
+const input = document.getElementById('numberInput').defaultValue = "30";
 
 clearBtn.addEventListener('click', function(e) {
     e.preventDefault;
@@ -20,7 +19,7 @@ function createColorGrid(num, color) {
         box.style.background = color.toString();
         container.appendChild(box);
     }
-    applyColorMouseEvent();
+    
     container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
     container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
 }
@@ -33,7 +32,7 @@ function createGrayGrid(num, color) {
         container.style.setProperty('background', 'lightgray');
         container.appendChild(box);
     }
-    increaseOpacity();
+    
     container.style.gridTemplateColumns = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
     container.style.gridTemplateRows = `repeat(auto-fill, minmax(auto, ${100 / num}%))`;
 }
@@ -51,12 +50,13 @@ function clearGrid() {
 }
 
 function clickPress(event) {
+    clearGrid();
     getInputValue();
     if (inputValue < 0 || inputValue > 100) {
         alert("Please enter a number between 1 and 100.");
         return;
     } else if (event.keyCode == 13) {
-        clearGrid();
+        
         if(document.getElementById('grayscale').checked == true) {
             createGrayGrid(inputValue, 'lightgray');
         } else {
@@ -77,14 +77,6 @@ function applyColorMouseEvent() {
     });
 };
 
-function applyGrayMouseEvent() {
-    container.addEventListener("mouseover", event => {
-        if (event.target.className === 'box') {
-        event.target.style.background = `hsl(0, 0%, 35%)`;
-        };
-    });
-};
-
 function increaseOpacity() {
     container.addEventListener("mouseover", event => {
         let divStyle = getComputedStyle(event.target);
@@ -99,3 +91,5 @@ function getRandomHexColor() {
 } 
 
 createGrayGrid(30, 'lightgray');
+increaseOpacity();
+applyColorMouseEvent();
